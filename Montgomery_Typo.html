@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Montgomery Typo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+body,td,th {
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 100%;
+    color: rgba(0,0,0,1);
+}
+
+
+
+body {
+    background-color: rgba(210,180,140,1.00);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    
+}
+.reveal-text {
+    opacity: 0;
+    font-family: 'Schoolbell', cursive;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+    position: absolute;
+    font-size: 15px;
+    width: 180px;
+    height: 18px;
+}
+
+.reveal-text-two {
+    font-family: 'Schoolbell', cursive;
+  opacity: 0;
+  transition: 
+    opacity 0.5s ease,
+    transform 0.4s ease,
+    font-size 0.4s ease;
+    cursor: pointer;
+    position: absolute;
+    font-size: 15px;
+    width: 656px;
+    height: 26px;
+}
+
+.reveal-text.visible {
+  opacity: 1;
+}
+
+.reveal-text-two.visible {
+  opacity: 1;
+}
+
+.reveal-text-two.expanded {
+    font-family: 'Permanent Marker', cursive;
+  transform: scale(1.8);
+  font-size: 28px;
+  z-index: 10;
+}
+
+.explode {
+    font-family: 'Permanent Marker', cursive;
+    display: inline-block;
+    transition: transform 0.4s ease-out,
+        opacity 0.4s ease-out,
+        filter 0.4s ease-out;
+    cursor: pointer;
+    position: absolute;
+    width: 167px;
+    transform: rotate(-25deg);
+}
+
+.explode:hover {
+  transform: scale(4) rotate(25deg);
+  opacity: 0;
+  filter: blur(3px);
+}
+
+
+.explode-two {
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    transition: transform 0.4s ease-out,
+        opacity 0.4s ease-out,
+        filter 0.4s ease-out;
+    cursor: pointer;
+    position: absolute;
+    width: 167px;
+    transform: rotate(25deg);
+}
+
+.explode-two:hover {
+  transform: scale(4) rotate(-55deg);
+  opacity: 0;
+  filter: blur(3px);
+}
+
+
+.explode-three {
+    font-family: 'Alfa Slab One', serif;
+    display: inline-block;
+    transition: transform 0.4s ease-out,
+        opacity 0.4s ease-out,
+        filter 0.4s ease-out;
+    cursor: pointer;
+    position: absolute;
+    width: 167px;
+    transform: rotate(-170deg);
+}
+
+.explode-three:hover {
+  transform: scale(4) rotate(-25deg);
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.spiral {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  color: rgba(255,215,0,1);
+  animation: spin 10s linear infinite;
+}
+
+.spiral span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  font-size: 24px;
+}
+
+.shake-vanish {
+  display: inline-block;
+  transition: opacity 0.5s ease-out;
+  color: rgba(255,0,0,1);
+  font-family: 'Delius', bold;
+  position: absolute;
+  font-size: 15px;
+}
+
+.shake-vanish:hover {
+  animation: shake 0.5s ease-in-out;
+  opacity: 0;
+  font-size: 20px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-5px, 0); }
+  40% { transform: translate(5px, 0); }
+  60% { transform: translate(-5px, 0); }
+  80% { transform: translate(5px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+
+
+
+
+
+</style>
+</head>
+<audio controls autoplay>
+  <source src="24.mp3" type="audio/mpeg">
+</audio> 
+
+
+
+<body>
+
+
+<div class="spiral" id="spiral" style="top: -150px; left: 525px;" ></div>
+<div class="shake-vanish" style="top: 714px; left: 234px;">The devil's a lie, but now he finished</div>
+<div class="shake-vanish" style="top: 714px; left: 1034px;">The devil's a lie, but now he finished</div>
+
+
+
+<div class="reveal-text" style="top: 120px; left: 660px;">God, I done my time to go</div>
+<div class="reveal-text"  style="top: 143px; left: 660px;">Never the right time to go</div>
+<div class="reveal-text" style="top: 553px; left: 660px;">New me over the old me</div>
+<div class="reveal-text"  style="top: 242px; left: 660px;">Make it right, now that feels right</div>
+<div class="reveal-text"  style="top: 166px; left: 659px;">Dear God, make it alright, only You can make it alright</div>
+<div class="reveal-text"  style="top: 206px; left: 660px;">Dear Lord, make it alright, nothing else ever feels right</div>
+
+
+
+<div class="reveal-text-two"  style="top: 276px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div><div class="reveal-text-two"  style="top: 296px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div>
+<div class="reveal-text-two"  style="top: 316px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div>
+<div class="reveal-text-two"  style="top: 336px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div>
+<div class="reveal-text-two"  style="top: 356px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div>
+<div class="reveal-text-two"  style="top: 376px; left: 458px;">Know you alive and God's not finished, Know you alive and God's not finished, Know you alive </div>
+
+
+<div class="reveal-text" style="top: 392px; left: 660px;">God, I done my time to go</div>
+<div class="reveal-text"  style="top: 534px; left: 660px;">Never the right time to go</div>
+<div class="reveal-text" style="top: 513px; left: 660px;">New me over the old me</div>
+<div class="reveal-text"  style="top: 411px; left: 660px;">Make it right, now that feels right</div>
+<div class="reveal-text"  style="top: 445px; left: 660px;">Dear God, make it alright, only You can make it alright</div>
+<div class="reveal-text"  style="top: 480px; left: 660px;">Dear Lord, make it alright, nothing else ever feels right</div>
+<div class="reveal-text"  style="top: 576px; left: 660px;">God, please set it alright</div>
+<div class="reveal-text"  style="top: 596px; left: 660px;">Gotta make it right before you left</div>
+<div class="reveal-text"  style="top: 633px; left: 660px;">Save me, yeah, make it alright</div>
+<div class="reveal-text"  style="top: 647px; left: 660px;">Love when you choose your steps</div>
+<div class="reveal-text" style="top: 682px; left: 660px;">God, I done my time to go</div>
+
+
+
+<div class="explode-two" style="top: 657px; left: 88px;">We gonna be okay</div>
+
+<div class="explode" style="top: 173px; left: 410px;">We gonna be okay</div>
+
+<div class="explode-two" style="top: 635px; left: 1009px;">We gonna be okay</div>
+
+<div class="explode-three" style="top: 311px; left: 1165px;">We gonna be okay</div>
+
+<div class="explode" style="top: 458px; left: 919px;">We gonna be okay</div>
+
+<div class="explode" style="top: 215px; left: 910px;">We gonna be okay</div>
+
+<div class="explode-three" style="top: 158px; left: 23px;">We gonna be okay</div>
+
+<div class="explode-two" style="top: 570px; left: 1254px;">We gonna be okay</div>
+
+<div class="explode" style="top: 468px; left: 15px;">We gonna be okay</div>
+
+<div class="explode-two" style="top: 564px; left: 447px;">We gonna be okay</div>
+
+<div class="explode-two" style="top: 44px; left: 1135px;">We gonna be okay</div>
+
+
+<script>
+document.querySelectorAll('.reveal-text, .reveal-text-two').forEach(text => {
+  text.addEventListener('mouseover', () => {
+    text.classList.add('visible');
+  });
+});
+
+
+const text = "Throw our hands up in the sky Yes, Lord, we put 'em high";
+const spiral = document.getElementById("spiral");
+
+let angle = 0;
+let radius = 0;
+
+for (let i = 0; i < text.length; i++) {
+  const char = document.createElement("span");
+  char.textContent = text[i];
+  
+  
+  const x = Math.cos(angle) * radius;
+  const y = Math.sin(angle) * radius;
+  
+  char.style.transform = `translate(${x}px, ${y}px) rotate(${angle}rad)`;
+  
+  spiral.appendChild(char);
+  
+  angle += 0.35;   
+  radius += 2;     
+}
+
+const allElements = document.querySelectorAll('body *');
+const revealTexts = document.querySelectorAll('.reveal-text-two');
+
+revealTexts.forEach(el => {
+  el.addEventListener('mouseover', () => el.classList.add('visible'));
+
+  el.addEventListener('click', () => {
+    const isExpanded = el.classList.contains('expanded');
+
+    if (isExpanded) {
+      allElements.forEach(item => item.classList.remove('hidden'));
+      el.classList.remove('expanded');
+    } else {
+      allElements.forEach(item => {
+        if (item !== el) item.classList.add('hidden');
+      });
+      el.classList.add('expanded');
+    }
+  });
+});
+
+
+</script>
+</body>
+</html>
