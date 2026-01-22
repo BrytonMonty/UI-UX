@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<title>Interactive Media</title>
+
+<style>
+body,td,th {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0,0,0,1);
+}
+
+}
+body { 
+    background-color: rgba(0,0,0,1);
+
+}
+
+
+@keyframes boxGlow {
+    0% {
+        background-color: rgba(0,255,255,0.1);
+        box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+    50% {
+        background-color: rgba(0,255,255,0.3);
+        box-shadow: 0 0 40px rgba(0,255,255,0.8);
+    }
+    100% {
+        background-color: rgba(0,255,255,0.1);
+        box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+}
+
+}
+
+@keyframes fadeZoom {
+0%   { 
+    transform: scale(0.80); opacity: 0; 
+}
+100% { 
+    transform: scale(1.00); 
+    opacity: 1; 
+}
+
+}
+
+
+#container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    margin: auto;
+    overflow: hidden;     
+    background-color: rgba(53,53,53,1.00);
+    border: 2px solid rgba(51,51,51,1.00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('IMAGES/background.jpg'); 
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hotspot {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 50;
+    animation: boxGlow 2s infinite;
+}
+
+.hotspot:hover {
+    animation: none;
+    color: transparent;     
+    text-shadow: none;
+    
+}
+
+
+.hotspot:hover + .layer {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    animation: fadeZoom 0.6s ease;
+}
+
+
+.hotspot:hover ~ .banner-layer {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    animation: fadeZoom 0.8s ease;
+}
+
+
+#images-layer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#images-layer img {
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.video-player {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+#text-layer {
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    font-size: 28px;
+    line-height: 1.5;
+    background: rgba(0,0,0,0.7);
+}
+
+
+.banner-layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background: rgba(0,255,255,0.12);
+    color: rgba(255,255,255,1.00);
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+#audio-btn { 
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000; 
+    padding: 12px 20px; 
+    background: rgba(255,255,255,1.00); 
+    color: rgba(0,0,0,1.00); 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+}
+
+
+#audio-btn:hover { 
+    background: rgba(0,234,255,1.00); 
+}
+
+#welcome-layer {
+    position: absolute; 
+    text-align: center;
+    color: rgba(0,255,255,1.00);
+    font-size: 36px;
+    z-index: 2000;
+    width: 100%; 
+    opacity: 1; 
+    transition: opacity 0.6s ease; 
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div id="container">
+    <div id="welcome-layer">
+       <h1>Welcome to My Interactive Gallery Experience!</h1>
+    </div>
+    
+    <div class="hotspot" style="left: 50px; top: 50px;">IMAGES</div>
+    <div class="layer" style="z-index: 5;">
+        <div id="images-layer">
+            <img src="IMAGES/img1.jpg">
+            <img src="IMAGES/img2.jpg">
+            <img src="IMAGES/img3.jpg">
+            <img src="IMAGES/img4.jpg">
+            <img src="IMAGES/img5.jpg">
+            <img src="IMAGES/img6.jpg">
+            <img src="IMAGES/img7.jpg">
+            <img src="IMAGES/img8.jpg">
+            <img src="IMAGES/img9.jpg">
+            <img src="IMAGES/img10.jpg">
+        </div>
+    </div>
+
+    <div class="hotspot" id="hotspot1" style="right: 50px; top: 50px;" 
+         onMouseOver="playVideo(0)" onMouseOut="pauseVideo(0)">VIDEO 1</div>
+    <div class="layer" style="z-index: 20;">
+        <video muted loop class="video-player">
+          <source src="VIDEOS/video2.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+    <div class="hotspot" id="hotspot2" style="left: 50px; bottom: 50px;" 
+         onMouseOver="playVideo(1)" onMouseOut="pauseVideo(1)">VIDEO 2</div>
+    <div class="layer" style="z-index: 20;">
+        <video muted loop class="video-player">
+          <source src="VIDEOS/video1.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+    <div class="hotspot" id="hotspot3" style="right: 50px; bottom: 50px;" 
+         onMouseOver="playVideo(2)" onMouseOut="pauseVideo(2)">VIDEO 3</div>
+    <div class="layer" style="z-index: 20;">
+        <video muted loop class="video-player">
+          <source src="VIDEOS/video3.mp4" type="video/mp4"> 
+        </video>
+    </div>
+
+    <div class="banner-layer">
+        IMAGES AND VIDEOS FROM THE PAST YEAR
+    </div>
+    
+    <audio id="bg-audio" src="AUDIO/minecraft.mp3" loop></audio>
+    <button id="audio-btn">Play Audio</button>
+
+</div>
+<script>
+
+
+/*CHATGPT helped with this part; hides all glowing*/
+const hotspots = document.querySelectorAll(".hotspot");
+const audioBtn = document.getElementById("audio-btn");
+const welcome = document.getElementById("welcome-layer"); 
+
+hotspots.forEach(h => {
+    h.addEventListener("mouseenter", () => {
+        hotspots.forEach(hs => {
+            hs.style.opacity = "0";                
+            hs.style.animation = "none";           
+        });
+        audioBtn.style.opacity = "0";  
+        audioBtn.style.pointerEvents = "none"; 
+
+        welcome.style.opacity = "0"; 
+    });
+
+    h.addEventListener("mouseleave", () => {
+        hotspots.forEach(hs => {
+            hs.style.opacity = "1";                
+            hs.style.animation = "boxGlow 2s infinite";
+        });
+        audioBtn.style.opacity = "1";  
+        audioBtn.style.pointerEvents = "auto"; 
+
+       welcome.style.opacity = "1"; 
+    });
+});
+
+const videos = document.querySelectorAll('.video-player');
+
+function playVideo(index) {
+    if (videos[index]) videos[index].play();
+}
+
+function pauseVideo(index) {
+    if (videos[index]) videos[index].pause();
+}
+
+const audio = document.getElementById("bg-audio");
+const btn = document.getElementById("audio-btn");
+
+
+btn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play().catch(e => console.log("Audio play blocked:", e));
+        btn.textContent = "Pause Audio";
+    } else {
+        audio.pause();
+        btn.textContent = "Play Audio";
+    }
+});
+
+</script>
+
+
+</body>
+</html>
