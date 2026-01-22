@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bryton's Lazy Resume</title>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+
+
+<style>
+
+body, td, th {
+    font-family: Chewy, regular;
+    font-size: 100%;
+    color: rgba(255,255,255,1);
+}
+body {
+    background-color: rgba(0,0,0,1.00);
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    margin: 40px auto;
+    overflow: hidden;
+    background-image: url('IMAGES/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #333;
+}
+
+
+#menu {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 40px;
+    background-color: rgba(145,105,62,0.8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 15px;
+    z-index: 20;
+    justify-content: center;
+    font-size: 15px;
+}
+
+
+#projects {
+    position: absolute;
+    top: 520px;
+    left: 230px;
+    width: 231px;
+    height: 119px;
+    transform: translateX(-50%);
+    background: url('IMAGES/projects.png')no-repeat center / 90% 90%;;
+    font-size: 40px;
+    cursor: pointer;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+#skills {
+    position: absolute;
+    top: 430px;
+    right: 170px;
+    width: 191px;
+    height: 84px;
+    background: url('IMAGES/skills.png')no-repeat center / 90% 90%;
+    font-size: 40px;
+    cursor: pointer;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+#experience {
+    position: absolute;
+    top: 520px;
+    right: 80px;
+    width: 206px;
+    height: 112px;
+    background: url('IMAGES/exp.png')no-repeat center / 90% 90%;
+    font-size: 40px;
+    cursor: pointer;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+
+#contact {
+    position: absolute;
+    top: 580px;
+    right: 225px;
+    width: 99px;
+    height: 50px;
+    background: url('IMAGES/contact.png')no-repeat center / 90% 90%;
+    font-size: 40px;
+    cursor: pointer;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+
+#education {
+    position: absolute;
+    top: 355px;
+    left: 330px;
+    width: 49px;
+    height: 156px;
+    background: url('IMAGES/education.png')no-repeat center / 90% 90%;
+    font-size: 40px;
+    cursor: pointer;
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+#education #bubblefive {
+    position: absolute;
+    top: -300px;
+    left: 250px;
+    transform: translateX(-50%);
+    height: 450px;
+    width: 600px;
+    background: url('IMAGES/thought.png') no-repeat center / 100% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#experience #bubblethree {
+    position: absolute;
+    top: -470px;
+    left: -400px;
+    transform: translateX(-50%);
+    height: 450px;
+    width: 600px;
+    background: url('IMAGES/thought.png') no-repeat center / 100% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skills #bubbletwo {
+    position: absolute;
+    top: -370px;
+    left: -340px;
+    transform: translateX(-50%);
+    height: 450px;
+    width: 600px;
+    background: url('IMAGES/thought.png') no-repeat center / 100% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects #bubble {
+    position: absolute;
+    top: -450px;
+    left: 450px;
+    transform: translateX(-50%);
+    height: 450px;
+    width: 600px;
+    background: url('IMAGES/thought.png') no-repeat center / 100% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#contact #bubblefour {
+    position: absolute;
+    top: -520px;
+    left: -350px;
+    transform: translateX(-50%);
+    height: 450px;
+    width: 600px;
+    background: url('IMAGES/thought.png') no-repeat center / 100% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#projects:hover #bubble {
+    opacity: 1;
+}
+
+
+#skills:hover #bubbletwo {
+    opacity: 1;
+}
+
+#experience:hover #bubblethree {
+    opacity: 1;
+}
+
+#contact:hover #bubblefour {
+    opacity: 1;
+}
+
+#education:hover #bubblefive {
+    opacity: 1;
+}
+
+
+
+
+#bubbleVideo {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: url('IMAGES/thought.png');
+    mask-image: url('IMAGES/thought.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+.fade-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 26px;
+    width: 70%;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeInOut 3.5s ease-in-out infinite;
+}
+
+#filterOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px) brightness(0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 999; 
+}
+
+#filterOverlay.active {
+    opacity: 1;
+}
+
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes pulseGlow {
+    0% {
+        filter: drop-shadow(0 0 2.5px rgba(255, 255, 255, 0.5))
+                drop-shadow(0 0 5px rgba(255, 200, 0, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+                drop-shadow(0 0 25px rgba(255, 200, 0, 0.9));
+    }
+    100% {
+        filter: drop-shadow(0 0 2.5px rgba(255, 255, 255, 0.5))
+                drop-shadow(0 0 5px rgba(255, 200, 0, 0.4));
+    }
+}
+</style>
+</head>
+<audio controls autoplay loop>
+  <source src="AUDIO/music.mp3" type="audio/mpeg">
+</audio> 
+
+<body>
+
+<button id="filterBtn"
+style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(241,90,34,0.7);
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2000;
+">
+    Turn Off The Lights
+</button>
+
+<div id="container">
+
+
+<div id="filterOverlay">
+</div>
+    <menu id="menu">
+        <h1>Bryton's Lazy Resume</h1>
+    </menu>
+
+
+    <div id="projects">
+
+        <div id="bubble">
+            <video id="bubbleVideo" muted autoplay></video>
+        </div>
+    </div>
+    
+    <div id="skills">
+        <div id="bubbletwo">
+    <div class="fade-text">
+        Resident Assistant: 2024-Present <br>
+        RAAB Exec Board: 2024-Present <br>
+        Alpha Tau Omega: 2023-Present<br>
+        Laser Team Driver: 2022-2024
+    </div>
+    
+    </div>
+    </div>
+    
+    
+    <div id="experience">
+        <div id="bubblethree">
+    <div class="fade-text">
+        HTML • CSS<br>
+        JAVASCRIPT • PYTHON<br>
+        JAVA • DJANGO <br>
+        LINUX • DOCKER <br>
+    </div>
+    </div>
+    </div>
+    
+    <div id="contact">
+        <div id="bubblefour">
+    <div class="fade-text">
+        Bryton Montgomery <br>
+        btm.monty@gmail.com<br>      
+          724-217-5858
+    </div>
+    </div>
+    </div>
+    
+    <div id="education">
+    <div id="bubblefive">
+    <div class="fade-text">
+        The University of Tampa <br>
+        Bachelor of Science in Computer Science<br>      
+         Minors in Mathematics and New Media
+    </div>
+    </div>
+    </div>
+
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const videos = [
+        "VIDEOS/game.mp4",
+        "VIDEOS/vector.mp4",
+        "VIDEOS/video.mp4",
+        "VIDEOS/kanye.mp4",
+        "VIDEOS/eternal.mp4"
+    ];
+
+    let index = 0;
+    const player = document.getElementById("bubbleVideo");
+
+    player.src = videos[index];
+    player.play();
+
+    player.addEventListener("ended", () => {
+        index = (index + 1) % videos.length;
+        player.src = videos[index];
+        player.play();
+    });
+    
+    const filterBtn = document.getElementById("filterBtn");
+    const overlay = document.getElementById("filterOverlay");
+
+    filterBtn.addEventListener("click", () => {
+        overlay.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>
